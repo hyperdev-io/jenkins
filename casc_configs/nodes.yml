@@ -1,0 +1,12 @@
+jenkins:
+  nodes:
+  - permanent:
+      labelString: "docker"
+      launcher:
+        jnlp:
+          workDirSettings:
+            disabled: false
+            failIfWorkDirIsMissing: false
+            internalDir: "remoting"
+      name: "docker-slave"
+      remoteFS: "/home/jenkins/agent"

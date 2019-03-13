@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  www:
+    build: .
+    volumes:
+      - ./jenkins-home:/var/jenkins_home
+      - ./casc_configs:/var/jenkins_casc_configs
+    environment:
+      - "CASC_JENKINS_CONFIG=/var/jenkins_casc_configs"
+      - "JAVA_OPTS=-Djenkins.install.runSetupWizard=false -Dorg.jenkinsci.remoting.engine.JnlpProtocol4.disabled=false -Duser.timezone=Europe/Amsterdam -Dhudson.model.DirectoryBrowserSupport.CSP='' -Xmx3072m"
+
+  slave:
+    image: jenkins/jnlp-slave
+    command: -url http://www:8080 -workDir /home/jenkins/agent jenkins_jnlp_slave_secret_here docker-slave

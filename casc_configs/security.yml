@@ -1,0 +1,63 @@
+jenkins:
+  securityRealm:
+    crowd:
+      url: https://jira.team-dso.nl/crowd
+      applicationName: jenkins
+      password: "notarealpassword"
+      cookieTokenkey: crowd.token_key
+      cookieDomain: team-dso.nl
+      group: jenkins-administrators,jenkins-users
+      useSSO: true
+  authorizationStrategy:
+    globalMatrix:
+      grantedPermissions:
+      - Overall/Administer:jenkins-administrators
+      - Overall/Read:jenkins-administrators
+      - Overall/RunScripts:jenkins-administrators
+      - Overall/UploadPlugins:jenkins-administrators
+      - Overall/ConfigureUpdateCenter:jenkins-administrators
+      - Credentials/Create:jenkins-administrators
+      - Credentials/Delete:jenkins-administrators
+      - Credentials/ManageDomains:jenkins-administrators
+      - Credentials/Update:jenkins-administrators
+      - Credentials/View:jenkins-administrators
+      - Agent/Build:jenkins-administrators
+      - Agent/Configure:jenkins-administrators
+      - Agent/Connect:jenkins-administrators
+      - Agent/Create:jenkins-administrators
+      - Agent/Delete:jenkins-administrators
+      - Agent/Disconnect:jenkins-administrators
+      - Job/Build:jenkins-administrators
+      - Job/Cancel:jenkins-administrators
+      - Job/Configure:jenkins-administrators
+      - Job/Create:jenkins-administrators
+      - Job/Delete:jenkins-administrators
+      - Job/Discover:jenkins-administrators
+      - Job/Move:jenkins-administrators
+      - Job/Read:jenkins-administrators
+      - Job/Workspace:jenkins-administrators
+      - Run/Delete:jenkins-administrators
+      - Run/Replay:jenkins-administrators
+      - Run/Update:jenkins-administrators
+      - View/Configure:jenkins-administrators
+      - View/Create:jenkins-administrators
+      - View/Delete:jenkins-administrators
+      - View/Read:jenkins-administrators
+      - Lockable Resources/Reserve:jenkins-administrators
+      - Lockable Resources/Unlock:jenkins-administrators
+      - Overall/Read:jenkins-users
+      - Credentials/Create:jenkins-users
+      - Job/Build:jenkins-users
+      - Job/Cancel:jenkins-users
+      - Job/Configure:jenkins-users
+      - Job/Create:jenkins-users
+      - Job/Discover:jenkins-users
+      - Job/Read:jenkins-users
+      - Job/Workspace:jenkins-users
+      - Run/Replay:jenkins-users
+      - View/Create:jenkins-users
+      - View/Read:jenkins-users
+
+security:
+  remotingCLI:
+    enabled: false

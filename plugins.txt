@@ -1,0 +1,13 @@
+ansicolor:0.6.2
+configuration-as-code:1.7
+configuration-as-code-support:1.7
+crowd2:2.0.2
+greenballs:1.15
+htmlpublisher:1.18
+git:3.9.3
+jdk-tool:1.2
+matrix-auth:2.3
+pipeline-maven:3.6.7
+ssh-slaves:1.29.4
+workflow-aggregator:2.6
+ws-cleanup:0.37
