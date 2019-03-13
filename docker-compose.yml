@@ -3,6 +3,8 @@ version: '3.3'
 services:
   www:
     build: .
+    ports:
+      - "8080:8080"
     volumes:
       - ./jenkins-home:/var/jenkins_home
       - ./casc_configs:/var/jenkins_casc_configs
